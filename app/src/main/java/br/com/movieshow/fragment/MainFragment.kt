@@ -1,4 +1,4 @@
-package br.iesb.navigation.fragment
+package br.com.movieshow.fragment
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -7,8 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-import br.iesb.navigation.R
-import br.iesb.navigation.viewmodel.MainViewModel
+import br.com.movieshow.R
+import br.com.movieshow.viewmodel.MainViewModel
 
 class MainFragment : Fragment() {
 

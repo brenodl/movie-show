@@ -1,7 +1,8 @@
-package br.com.movieshow
+package br.com.movieshow.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import br.com.movieshow.R
 
 class MainActivity : AppCompatActivity() {
 

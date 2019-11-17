@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="br.iesb.navigation.fragment.LoginFragment"
+        android:name="br.com.movieshow.fragment.LoginFragment"
         android:label="LoginFragment" >
         <action
             android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
@@ -18,12 +18,12 @@
     </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
-        android:name="br.iesb.navigation.fragment.ForgotPasswordFragment"
+        android:name="br.com.movieshow.fragment.ForgotPasswordFragment"
         android:label="forgot_password_fragment"
         tools:layout="@layout/forgot_password_fragment" />
     <activity
         android:id="@+id/mainActivity"
-        android:name="br.iesb.navigation.activity.MainActivity"
+        android:name="br.com.movieshow.activity.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
 </navigation>

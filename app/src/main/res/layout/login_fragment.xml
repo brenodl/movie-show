@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
 
     <data>
         <import type="android.view.View"/>
         <variable
             name="fragment"
-            type="br.iesb.navigation.fragment.LoginFragment" />
+            type="br.com.movieshow.fragment.LoginFragment" />
 
         <variable
             name="viewmodel"
-            type="br.iesb.navigation.viewmodel.LoginViewModel" />
+            type="br.com.movieshow.viewmodel.LoginViewModel" />
 
     </data>
 
@@ -130,7 +132,6 @@
                 android:textColor="@color/colorAccent" />
 
         </com.google.android.material.textfield.TextInputLayout>
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

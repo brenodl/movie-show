@@ -1,4 +1,4 @@
-package br.iesb.navigation.viewmodel
+package br.com.movieshow.viewmodel
 
 import androidx.lifecycle.ViewModel
 

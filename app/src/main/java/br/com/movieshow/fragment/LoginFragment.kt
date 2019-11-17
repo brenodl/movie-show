@@ -1,4 +1,4 @@
-package br.iesb.navigation.fragment
+package br.com.movieshow.fragment
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -8,9 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 
-import br.iesb.navigation.R
-import br.iesb.navigation.databinding.LoginFragmentBinding
-import br.iesb.navigation.viewmodel.LoginViewModel
+import br.com.movieshow.R
+import br.com.movieshow.databinding.LoginFragmentBinding
+import br.com.movieshow.viewmodel.LoginViewModel
 
 class LoginFragment : Fragment() {
 
