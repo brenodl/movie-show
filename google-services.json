@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "800418080661",
+    "firebase_url": "https://movieshow-c2387.firebaseio.com",
+    "project_id": "movieshow-c2387",
+    "storage_bucket": "movieshow-c2387.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:800418080661:android:156a26e1e2a3f78a29389c",
+        "android_client_info": {
+          "package_name": "br.com.movieshow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "800418080661-3fdhh0lfh0mej1epbuno1rcf8n2tgdit.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.movieshow",
+            "certificate_hash": "eadc01b8c891f6cf0a93edb61d0996d0b3dd74be"
+          }
+        },
+        {
+          "client_id": "800418080661-uonj24pesikmie52feebghi72h13fmik.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClAc1foENK9vfI4fViWJNLIOEF48SBSLE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "800418080661-uonj24pesikmie52feebghi72h13fmik.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
