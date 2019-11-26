@@ -29,5 +29,4 @@ class ForgotPasswordFragment : Fragment() {
         viewModel = ViewModelProviders.of(this).get(ForgotPasswordViewModel::class.java)
         // TODO: Use the ViewModel
     }
-
 }
