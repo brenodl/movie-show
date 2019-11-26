@@ -95,7 +95,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
-            android:hint="@string/email"
+            android:hint="E-mail"
             app:boxStrokeColor="@color/colorAccent"
             app:layout_constraintBottom_toTopOf="@+id/centerGuide"
             app:layout_constraintEnd_toEndOf="parent"
