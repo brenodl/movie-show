@@ -34,7 +34,10 @@ class CadastroFragment : Fragment() {
     }
 
     fun cadastro(view: View) {
-        viewModel.createAccount()
-        findNavController().navigate(R.id.action_loginFragment_to_loginFragment)
+        if(viewModel.createAccount()){
+        findNavController().navigate(R.id.action_cadastroFragment_to_LoginFragment)
+    }else{
+        Toast.makeText(this.context, "E-mail sendo utilizado em outra conta.",Toast.LENGTH_SHORT).show()
+    }
     }
 }
