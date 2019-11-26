@@ -6,6 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.navigation.fragment.findNavController
+import br.com.movieshow.R
 
 import br.com.movieshow.databinding.CadastroFragmentBinding
 import br.com.movieshow.viewmodel.CadastroViewModel
@@ -28,5 +31,10 @@ class CadastroFragment : Fragment() {
         binding.lifecycleOwner = this
 
         return binding.root
+    }
+
+    fun cadastro(view: View) {
+        viewModel.createAccount()
+        findNavController().navigate(R.id.action_loginFragment_to_loginFragment)
     }
 }

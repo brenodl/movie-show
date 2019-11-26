@@ -16,6 +16,9 @@
             android:id="@+id/action_loginFragment_to_mainActivity"
             app:destination="@id/mainActivity" />
         <action
+            android:id="@+id/action_loginFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
             android:id="@+id/action_loginFragment_to_cadastroFragment"
             app:destination="@id/cadastroFragment" />
     </fragment>
