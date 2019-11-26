@@ -14,6 +14,7 @@ class LoginViewModel(val app: Application) : AndroidViewModel(app) {
 
     val password = MutableLiveData<String>()
     val email = MutableLiveData<String>()
+
     private lateinit var auth: FirebaseAuth
     private var logado:Boolean = false
     fun login() : Boolean{
