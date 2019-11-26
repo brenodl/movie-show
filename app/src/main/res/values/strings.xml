@@ -6,6 +6,7 @@
     <string name="forgot_password">Esqueci a senha</string>
 
     <string name="register">REGISTER</string>
+    <string name="confirmar_senha">Confirmar Senha</string>
     <string name="registrar">Cadastrar</string>
     <string name="login_email_hint">Email</string>
     <string name="login_password_hint">Password</string>

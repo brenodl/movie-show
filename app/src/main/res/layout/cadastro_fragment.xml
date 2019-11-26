@@ -114,18 +114,23 @@
             android:layout_width="349dp"
             android:layout_height="50dp"
             android:text="Cadastrar"
+            android:onClick="@{fragment::cadastro}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tiPassword" />
 
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="346dp"
-            android:layout_height="48dp"
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:ems="10"
-            android:hint="Confirma Senha"
+            android:hint="@string/confirmar_senha"
             android:inputType="textPassword"
+            android:text="@={viewmodel.passwordConfirmar}"
             app:layout_constraintBottom_toTopOf="@+id/bt_cadastro"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.476"
