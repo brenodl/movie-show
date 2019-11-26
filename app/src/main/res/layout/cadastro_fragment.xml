@@ -8,11 +8,11 @@
         <import type="android.view.View"/>
         <variable
             name="fragment"
-            type="br.com.movieshow.fragment.LoginFragment" />
+            type="br.com.movieshow.fragment.CadastroFragment" />
 
         <variable
             name="viewmodel"
-            type="br.com.movieshow.viewmodel.LoginViewModel" />
+            type="br.com.movieshow.viewmodel.CadastroViewModel" />
 
     </data>
 
@@ -32,61 +32,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/btLogin"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="70dp"
-            android:layout_marginEnd="16dp"
-            android:onClick="@{fragment::login}"
-            android:text="@string/login"
-            app:layout_constraintBottom_toTopOf="@+id/btRegistrar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tiPassword" />
-
-        <Button
-            android:id="@+id/btRegistrar"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="44dp"
-            android:onClick="@{fragment::cadastro}"
-            android:text="@string/registrar"
-            app:layout_constraintBottom_toTopOf="@+id/btForgotPassword"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btLogin" />
-
-        <Button
-            android:id="@+id/btForgotPassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:onClick="@{fragment::forgotPassword}"
-            android:text="@string/forgot_password"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/bottomGuide" />
-
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/centerGuide"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.5" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/bottomGuide"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.9" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tiEmail"
@@ -103,9 +54,10 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etNome"
+                android:id="@+id/etEmail2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:ems="10"
                 android:inputType="text|textEmailAddress"
                 android:text="@={viewmodel.email}"
@@ -138,6 +90,22 @@
                 android:textColor="@color/colorAccent" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:hint="Nome"
+            android:inputType="text|textEmailAddress"
+            android:text="@={viewmodel.email}"
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/progressBar" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

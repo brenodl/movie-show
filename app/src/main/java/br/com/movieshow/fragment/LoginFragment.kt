@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 
 import br.com.movieshow.R
@@ -35,11 +36,18 @@ class LoginFragment : Fragment() {
     }
 
     fun login(view: View) {
-
+        if(viewModel.login()){
+            findNavController().navigate(R.id.action_loginFragment_to_mainActivity)
+        }else{
+            Toast.makeText(this.context, "Authentication failed.",Toast.LENGTH_SHORT).show()
+        }
     }
-
     fun forgotPassword(view: View) {
         findNavController().navigate(R.id.action_loginFragment_to_forgotPasswordFragment)
+    }
+
+    fun cadastro(view: View){
+        findNavController().navigate(R.id.action_loginFragment_to_cadastroFragment)
     }
 
 }
