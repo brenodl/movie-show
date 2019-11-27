@@ -10,8 +10,10 @@ class CadastroViewModel : ViewModel() {
      val password = MutableLiveData<String>()
      val email = MutableLiveData<String>()
      val passwordConfirmar = MutableLiveData<String>()
+
     private lateinit var auth: FirebaseAuth
     private var createAccountSucess:Boolean = false
+
     fun createAccount():Boolean{
         auth = FirebaseAuth.getInstance()
         if(password.value == passwordConfirmar.value) {

@@ -21,22 +21,6 @@
         android:layout_height="match_parent"
         android:background="@drawable/ic_login_bk">
 
-        <Button
-            android:id="@+id/btRegistrar3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="40dp"
-            android:onClick="@{fragment::cadastro}"
-            android:text="@string/registrar"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etPassword"
-            app:layout_constraintVertical_bias="0.884" />
-
         <ProgressBar
             android:id="@+id/progressBar"
             style="?android:attr/progressBarStyleHorizontal"
@@ -57,12 +41,11 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.5" />
 
-        <com.google.android.material.textfield.TextInputLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/tiEmail"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
             android:hint="@string/email"
             app:boxStrokeColor="@color/colorAccent"
@@ -73,18 +56,20 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etEmail2"
-                android:layout_width="match_parent"
+                android:layout_width="347dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:ems="10"
+                android:hint="@string/email"
                 android:inputType="text|textEmailAddress"
                 android:text="@={viewmodel.email}"
                 android:textColor="@color/colorPrimary"
-                android:textColorHint="@color/colorPrimary" />
+                android:textColorHint="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
-        </com.google.android.material.textfield.TextInputLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/tiPassword"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -100,15 +85,29 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPassword3"
-                android:layout_width="match_parent"
+                android:layout_width="347dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_marginBottom="1dp"
                 android:ems="10"
+                android:hint="@string/password"
                 android:inputType="textWebPassword"
                 android:text="@={viewmodel.password}"
-                android:textColor="@color/colorAccent" />
+                android:textColor="@color/colorAccent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
-        </com.google.android.material.textfield.TextInputLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/bt_cadastro"
+            android:layout_width="349dp"
+            android:layout_height="50dp"
+            android:onClick="@{fragment::cadastro}"
+            android:text="Cadastrar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etPassword" />
 
 
         <com.google.android.material.textfield.TextInputEditText
@@ -116,6 +115,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
             android:ems="10"
             android:hint="@string/confirmar_senha"
@@ -124,6 +124,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
+
             app:layout_constraintTop_toBottomOf="@+id/tiPassword"
             app:layout_constraintVertical_bias="0.100000024" />
 
@@ -139,6 +140,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/tiPassword" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
