@@ -6,6 +6,8 @@ import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import br.com.movieshow.activity.LoginActivity
+import br.com.movieshow.fragment.LoginFragment
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
@@ -17,13 +19,15 @@ class LoginViewModel(val app: Application) : AndroidViewModel(app) {
 
     private lateinit var auth: FirebaseAuth
     private var logado:Boolean = false
+
     fun login() : Boolean{
         auth = FirebaseAuth.getInstance()
-        if (email.value != null && password.value != null) {
+        if(auth.currentUser != null){
+            logado = true
+        }else if (email.value != null && password.value != null) {
             loginUser(email.value.toString(),password.value.toString())
-            return logado
         }
-        return false
+        return logado
     }
 
     fun loginUser(email:String, password:String) {
@@ -33,24 +37,8 @@ class LoginViewModel(val app: Application) : AndroidViewModel(app) {
                 if (task.isSuccessful) {
                     Log.d(TAG, "signInWithCustomToken:success")
                     this.logado = true
-                    val user = auth.currentUser
                 } else {
                     Log.w(TAG, "signInWithCustomToken:failure", task.exception)
-                }
-            }
-    }
-
-    fun createAccount(){
-        auth.createUserWithEmailAndPassword(email.value.toString(), password.value.toString())
-            .addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
-                    Log.d(TAG, "createUserWithEmail:success")
-                    val user = auth.currentUser
-                } else {
-                    // If sign in fails, display a message to the user.
-                    Log.w(TAG, "createUserWithEmail:failure", task.exception)
-
                 }
             }
     }

@@ -38,6 +38,7 @@ class CadastroFragment : Fragment() {
         findNavController().navigate(R.id.action_cadastroFragment_to_LoginFragment)
     }else{
         Toast.makeText(this.context, "E-mail sendo utilizado em outra conta.",Toast.LENGTH_SHORT).show()
+            findNavController().navigate(R.id.action_cadastroFragment_to_LoginFragment)
     }
     }
 }
