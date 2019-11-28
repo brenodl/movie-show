@@ -21,6 +21,7 @@ class LoginViewModel(val app: Application) : AndroidViewModel(app) {
     private var logado:Boolean = false
 
     fun login() : Boolean{
+
         auth = FirebaseAuth.getInstance()
         if(auth.currentUser != null){
             logado = true
@@ -28,6 +29,18 @@ class LoginViewModel(val app: Application) : AndroidViewModel(app) {
             loginUser(email.value.toString(),password.value.toString())
         }
         return logado
+    }
+
+    fun isLogado(): Boolean{
+        auth = FirebaseAuth.getInstance()
+        if(auth.currentUser != null){
+            return true
+        }
+        return false
+    }
+
+    fun logoff(){
+        FirebaseAuth.getInstance().signOut()
     }
 
     fun loginUser(email:String, password:String) {

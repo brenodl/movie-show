@@ -30,10 +30,8 @@ class LoginFragment : Fragment() {
         binding.viewmodel = viewModel
         binding.fragment = this@LoginFragment
         binding.lifecycleOwner = this
-
         return binding.root
     }
-
     fun login(view: View) {
         if(viewModel.login()) {
             findNavController().navigate(R.id.action_loginFragment_to_mainActivity)

@@ -1,3 +1,4 @@
+/*
 package br.com.movieshow.api
 
 import retrofit2.Call
@@ -22,4 +23,4 @@ interface Service {
 
     @GET("movie/{movie_id}/videos")
     fun getMovieVideos(@Path("movie_id") id: String): Observable<VideoResponse>
-}
+}*/
