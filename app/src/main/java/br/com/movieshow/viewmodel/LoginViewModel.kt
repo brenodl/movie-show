@@ -6,6 +6,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import br.com.movieshow.AppResult
 import br.com.movieshow.activity.LoginActivity
 import br.com.movieshow.fragment.LoginFragment
 import com.google.android.gms.tasks.Task
@@ -16,21 +17,15 @@ class LoginViewModel(val app: Application) : AndroidViewModel(app) {
 
     val password = MutableLiveData<String>()
     val email = MutableLiveData<String>()
+    val result = MutableLiveData<AppResult<String>>()
 
     private lateinit var auth: FirebaseAuth
-    private var logado:Boolean = false
 
-    fun login() : Boolean{
-
-        auth = FirebaseAuth.getInstance()
-        if(auth.currentUser != null){
-            logado = true
-        }else if (email.value != null && password.value != null) {
-            loginUser(email.value.toString(),password.value.toString())
+     fun login() {
+        if(email.value != null && password.value != null){
+            loginUser(email.value.toString(), password.value.toString())
         }
-        return logado
     }
-
     fun isLogado(): Boolean{
         auth = FirebaseAuth.getInstance()
         if(auth.currentUser != null){
@@ -44,14 +39,15 @@ class LoginViewModel(val app: Application) : AndroidViewModel(app) {
     }
 
     fun loginUser(email:String, password:String) {
-
+        auth = FirebaseAuth.getInstance()
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { task: Task<AuthResult> ->
                 if (task.isSuccessful) {
                     Log.d(TAG, "signInWithCustomToken:success")
-                    this.logado = true
+                    result.value = AppResult.Success("Login Realizado com sucesso")
                 } else {
                     Log.w(TAG, "signInWithCustomToken:failure", task.exception)
+                    result.value = AppResult.Error(task.exception)
                 }
             }
     }
