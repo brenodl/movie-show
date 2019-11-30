@@ -23,7 +23,14 @@
     android:id="@+id/forgotPasswordFragment"
     android:name="br.com.movieshow.fragment.ForgotPasswordFragment"
     android:label="forgot_password_fragment"
-    tools:layout="@layout/forgot_password_fragment" />
+    tools:layout="@layout/forgot_password_fragment" >
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <action
+        android:id="@+id/action_forgotPasswordFragment_to_LoginFragment"
+        app:destination="@id/loginFragment" />
     <fragment
         android:id="@+id/cadastroFragment"
         android:name="br.com.movieshow.fragment.CadastroFragment"
