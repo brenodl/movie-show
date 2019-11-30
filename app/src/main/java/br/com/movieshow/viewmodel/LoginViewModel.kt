@@ -40,7 +40,7 @@ class LoginViewModel(val app: Application) : AndroidViewModel(app) {
 
     fun loginUser(email:String, password:String) {
         auth = FirebaseAuth.getInstance()
-        auth.createUserWithEmailAndPassword(email, password)
+        auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener { task: Task<AuthResult> ->
                 if (task.isSuccessful) {
                     Log.d(TAG, "signInWithCustomToken:success")
