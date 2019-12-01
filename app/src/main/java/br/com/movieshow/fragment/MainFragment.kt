@@ -38,7 +38,7 @@ class MainFragment : Fragment() {
             updateLastMovies(it)
         }
 
-        viewModel.getLastMovies()
+        viewModel.getPopularMovies()
 
         return binding.root
     }

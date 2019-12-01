@@ -8,4 +8,10 @@ import retrofit2.http.Query
 interface Service {
     @GET("discover/movie")
     fun lastMovies(@Query("sort_by") sortBy: String): Single<MovieResultDTO>
+
+    @GET("movie/popular")
+    fun PopularMovies(): Single<MovieResultDTO>
+
 }
+
+

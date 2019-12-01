@@ -13,5 +13,7 @@ class MovieInteractor(context: Context) {
     fun lastMovies(sortBy: MovieQueryOrderBy): Single<Array<Movie>> {
         return movieRepository.lastMovies(sortBy)
     }
-
+    fun popularMovies(): Single<Array<Movie>> {
+        return movieRepository.PopularMovies()
+    }
 }

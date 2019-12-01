@@ -36,6 +36,27 @@ class MainViewModel(val app: Application) : AndroidViewModel(app) {
 
     }
 
+    fun getPopularMovies() {
+
+        disposable =
+            interactor.popularMovies()
+                .subscribe { res, error ->
+
+                    res.forEach { movie ->
+                        movie.title = "Filme: ${movie.title}"
+                    }
+
+                    if (error != null) {
+                        lastMovies.value = AppResult.Error(error)
+                        return@subscribe
+                    }
+
+                    lastMovies.value = AppResult.Success(res)
+                }
+
+    }
+
+
     override fun onCleared() {
         super.onCleared()
         disposable?.dispose()

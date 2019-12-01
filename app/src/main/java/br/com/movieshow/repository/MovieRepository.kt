@@ -29,5 +29,20 @@ class MovieRepository(val context: Context) :
             .observeOn(AndroidSchedulers.mainThread())
 
     }
+    fun PopularMovies(): Single<Array<Movie>> {
+
+        return movieService.PopularMovies()
+            .map { result ->
+
+                val list = mutableListOf<Movie>()
+                result.movies.forEach {
+                    list.add(it)
+                }
+                list.toTypedArray()
+            }
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+
+    }
 
 }

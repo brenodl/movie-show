@@ -35,6 +35,7 @@ private class AddAPIInterceptor(val context: Context): Interceptor {
 
         val apiKey = "60dedd5a664205ede6cff0c6d4d64e80"
         urlBuilder.addQueryParameter("api_key", apiKey)
+        urlBuilder.addQueryParameter("language", "pt-BR")
         builder.url(urlBuilder.build())
         return chain.proceed(builder.build())
     }
