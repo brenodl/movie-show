@@ -5,4 +5,5 @@ sealed class AppResult<out T: Any> {
     data class Error(val error: Throwable?): AppResult<Nothing>()
     data class EmptyEmail<out T: Any>(val email: T): AppResult<T>()
     data class EmptyPassword<out T: Any>(val password: T): AppResult<T>()
+    data class IncorrectPass<out T: Any>(val passwordVerify: T): AppResult<T>()
 }
