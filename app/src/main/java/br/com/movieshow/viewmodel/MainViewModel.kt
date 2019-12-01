@@ -4,7 +4,6 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import br.com.movieshow.AppResult
-import br.com.movieshow.api.Client
 import br.com.movieshow.domain.Movie
 import br.com.movieshow.dto.MovieQueryOrderBy
 import br.com.movieshow.interactor.MovieInteractor

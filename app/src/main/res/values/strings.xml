@@ -29,6 +29,12 @@
     <string name="action_settings">Settings</string>
     <string name="sair">Sair</string>
 
+    <string name="iv_cd_star_01">Primeira estrela da avaliação</string>
+    <string name="iv_cd_star_02">Segunda estrela da avaliação</string>
+    <string name="iv_cd_star_03">Terceira estrela da avaliação</string>
+    <string name="iv_cd_star_04">Quarta estrela da avaliação</string>
+    <string name="iv_cd_star_05">Quinta estrela da avaliação</string>
+
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>

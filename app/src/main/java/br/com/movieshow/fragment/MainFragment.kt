@@ -49,12 +49,6 @@ class MainFragment : Fragment() {
 
         when (result) {
             is AppResult.Success -> {
-                // TODO: UPDATE LAST MOVIES LIST
-
-                //result.data.forEach { movie ->
-                //    Log.d("MOVIES", movie.toString())
-                //}
-
                 recycleListView.adapter = MovieAdapter(result.data, viewModel)
             }
             is AppResult.Error -> {

@@ -3,7 +3,7 @@
     <color name="colorPrimary">#C70000</color>
     <color name="colorPrimaryDark">#C71814</color>
     <color name="colorAccent">#ff1a1a</color>
-
+    <color name="colorItemText">#999999</color>
     <!--colors for modern ui-->
     <color name="whiteTextColor">#fff</color>
     <color name="primaryTextColor">#00a5ff</color>
@@ -11,4 +11,15 @@
 
     <!--colros for card-->
     <color name="whiteCardColor">#fff</color>
+
+    <color name="colorItemNormal">#C0CCDA</color>
+
+    <color name="colorRedTransparent">#88FF0000</color>
+
+    <color name="colorItemBackground">#222222</color>
+    <color name="colorItemStar">#F4C54F</color>
+    <color name="colorItemCategory">#77D353</color>
+
+    <color name="colorItemSelectedBackground">#F95F62</color>
+    <color name="colorItemSelectedText">#333333</color>
 </resources>

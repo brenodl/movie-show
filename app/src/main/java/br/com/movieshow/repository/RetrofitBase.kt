@@ -21,11 +21,6 @@ private class AddHeaderInterceptor(val context: Context): Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
         val builder = chain.request().newBuilder()
-        val sharePref = context.getSharedPreferences("br.com.dynamiclight.androidmvvmi", MODE_PRIVATE)
-        val token = sharePref.getString("token", "")
-        if (token != "") {
-            builder.addHeader("Authorization", "Bearer $token")
-        }
         return chain.proceed(builder.build())
     }
 }
@@ -40,11 +35,9 @@ private class AddAPIInterceptor(val context: Context): Interceptor {
 
         val apiKey = "60dedd5a664205ede6cff0c6d4d64e80"
         urlBuilder.addQueryParameter("api_key", apiKey)
-
         builder.url(urlBuilder.build())
         return chain.proceed(builder.build())
     }
-
 }
 
 class JavaDateTypeAdapter : TypeAdapter<Date>() {
@@ -79,7 +72,6 @@ open class RetrofitBase(context: Context, baseUrl: String) {
 
         gson = GsonBuilder()
             .registerTypeAdapter(Date::class.java, JavaDateTypeAdapter())
-            //.setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
             .create()
 
         retrofit = Retrofit.Builder()
@@ -89,7 +81,4 @@ open class RetrofitBase(context: Context, baseUrl: String) {
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build()
     }
-
-    fun toJson(obj: Any): String = gson.toJson(obj)
-    inline fun <reified T> fromJson(json: String) = gson.fromJson(json, T::class.java)
 }
