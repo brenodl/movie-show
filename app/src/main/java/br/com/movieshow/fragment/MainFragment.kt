@@ -1,21 +1,21 @@
 package br.com.movieshow.fragment
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.movieshow.AppResult
-
 import br.com.movieshow.R
 import br.com.movieshow.adapter.MovieAdapter
 import br.com.movieshow.databinding.MainFragmentBinding
 import br.com.movieshow.domain.Movie
 import br.com.movieshow.viewmodel.MainViewModel
+
 
 class MainFragment : Fragment() {
 
@@ -49,6 +49,12 @@ class MainFragment : Fragment() {
 
         when (result) {
             is AppResult.Success -> {
+                // TODO: UPDATE LAST MOVIES LIST
+
+                //result.data.forEach { movie ->
+                //    Log.d("MOVIES", movie.toString())
+                //}
+
                 recycleListView.adapter = MovieAdapter(result.data, viewModel)
             }
             is AppResult.Error -> {
@@ -69,5 +75,4 @@ class MainFragment : Fragment() {
             }
         }
     }
-
 }
